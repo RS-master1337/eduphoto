@@ -1,2 +1,15 @@
 <h1>Look there</h1>
 <h1>github.com</h1>
+<h1>Задание {{task_number}} Выполнить до {{vremya}}</h1>
+<ol>
+{% for task in tasks %}
+<li>
+{% if task.done %}
+<s>{{task.description}}</s>
+{% else %}
+<b>{{task.description}}</b>
+{% endif %}
+
+</li>
+{% endfor %}
+</ol>
