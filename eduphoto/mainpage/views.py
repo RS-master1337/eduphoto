@@ -6,8 +6,8 @@ def index(request):
         request,                    # Запрос
 	    'mainpage/index.html',
         {
-            'kogda': datetime.now().strftime('%Y %B %d'),
-            'chto':[ # Они будут получены из базы данных, а не вбиты в код вручную!
+            'kogda': datetime.now(),
+            'tasks':[ # Они будут получены из базы данных, а не вбиты в код вручную!
                 {
                     'description': 'Не опаздывать',
                     'done': True,
@@ -19,6 +19,10 @@ def index(request):
                 {
                     'description': 'Лечь спать вовремя',
                     'done': False,
+                },
+                {
+                    'description': 'Починить заглавную страницу',
+                    'done': True,
                 },
             ]
         }                 
