@@ -12,12 +12,12 @@ def index(request):
         segodnya.month,
         segodnya.day,
     )
-    if kogdadata[0] == segodnya.day and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
-        plan = 'сегодня'
-    elif kogdadata[0] == (segodnya.day +1) and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
-        plan = 'завтра'
-    elif kogdadata[0] == (segodnya.day -1) and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
-        plan = 'вчера'
+#    if kogdadata[0] == segodnya.day and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
+#        plan = 'сегодня'
+#    elif kogdadata[0] == (segodnya.day +1) and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
+#        plan = 'завтра'
+#    elif kogdadata[0] == (segodnya.day -1) and kogdadata[1] == segodnya.month and kogdadata[2] == segodnya.year:
+#        plan = 'вчера'
     return render(
         request,                    # Запрос
 	    'mainpage/index.html',
