@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'mainpage/tablestyle.css' %}" >
+<table>
+    <tr>
+        <td><a href="{% url 'mainpage' %}">Главная</a></td>
+        <td><a href="{% url 'new_photo' %}">Форма на фотку</a></td>
+        <td><a href="{% url 'new_task' %}">Форма на задачу</a></td>
+        <td><a href="{% url 'new_kitten' %}">Форма на котенка</a></td>
+        <td>Админка</td>
+        <td>О нас</td>
+    </tr>
+</table>

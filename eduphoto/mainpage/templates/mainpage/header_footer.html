@@ -1,0 +1,8 @@
+<header><h1>Моя заглавная страничка</h1>    
+{% load static %}
+<link rel="stylesheet" href="{% static 'mainpage/mainstyle.css' %}" >
+<img id="todologo" src="{% static 'mainpage/кофи.png' %}" >
+{% include 'mainpage/menu.html' %}
+</header>
+
+{% block content %}{% endblock %}

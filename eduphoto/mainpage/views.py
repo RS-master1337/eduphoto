@@ -43,3 +43,13 @@ def index(request):
             ]
         }                 
     )
+
+
+#from templates.tasklist import menu.html
+def new_menu(request):
+    context = {    }
+    return render(
+        request,                  # Запрос
+	    'mainpage/menu.html', # путь к шаблону
+        context
+    )

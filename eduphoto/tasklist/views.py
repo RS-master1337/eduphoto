@@ -57,6 +57,8 @@ def new_kitten(request):
 	    'tasklist/newkitten.html',# путь к шаблону
         context                   # подстановки
     )
+
+
 from .forms import PhotoForm
 def new_photo(request):
     if request.method == "POST":

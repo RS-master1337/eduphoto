@@ -1,3 +1,6 @@
+{% load static %}
+<img id="todologo" src="{% static 'mainpage/кофи.png' %}" >
+
 <h1>Список дел на {{kogda}}</h1>
 <ol>
 {% for task in tasks %}
@@ -10,6 +13,9 @@
 </li>
 {% endfor %}
 </ol>
-<a href="http://127.0.0.1:8000/tasklist/newkitten/">Форма на котят</a>
+<a href="{% url 'new_kitten' %}">Форма на котят</a>
 <h1></h1>
-<a href="http://127.0.0.1:8000/tasklist/newtask/">Форма на задачу</a>
+<a href="{% url 'new_task' %}">Форма на задачу</a>
+<h1></h1>
+<a href="{% url 'new_photo' %}">Форма на фотку</a>
+
