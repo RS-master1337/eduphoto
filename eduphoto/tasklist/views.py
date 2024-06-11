@@ -76,3 +76,42 @@ def new_photo(request):
 	    'tasklist/newphoto.html', # путь к шаблону
         context                   # подстановки
     )
+
+
+from .models import Kitten
+def look_for(request):
+    if request.method == "POST":
+#       form = KittenForm(request.POST, request.FILES)
+        print(request.POST)
+   #     print(request.POST['Catname'][0])
+        print(request.POST.get('Catname'))
+        context = {
+            'kotenok': Kitten.objects.get(imya=request.POST.get('Catname'))
+        }
+        return render(
+            request,                  # Запрос
+	        'tasklist/kotenok_render.html',  # путь к шаблону
+            context                   # подстановки
+        )
+#        if form.is_valid():
+#            print(form.cleaned_data)
+#            form.save()
+    #else:
+    context = {
+        
+    }
+    return render(
+        request,                  # Запрос
+	    'tasklist/lookfor.html',  # путь к шаблону
+        context                   # подстановки
+    )
+
+#Bublik
+#{'csrfmiddlewaretoken': ['RJYDd9RAsCgNKncyoWDY0zkcFnCbKPlQqIvgf4IowY8jNuGDmfQuErAqusEgmof9'], 'Catname': ['Вася']}
+
+
+def aboutus(request):
+    return render(
+        request,                  # Запрос
+	    'tasklist/aboutus.html',# путь к шаблону
+    )

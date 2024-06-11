@@ -1,6 +1,10 @@
+{% extends 'mainpage/header_footer.html' %}
+{% block content %}
+
+
 <form action="{% url 'new_photo' %}" method="post">
     {% csrf_token %}
         {{ form }}
     <input type="submit" value="Загрузить фото">
 </form>
-    
+{% endblock %}

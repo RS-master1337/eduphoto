@@ -1,5 +1,5 @@
-{% load static %}
-<img id="todologo" src="{% static 'mainpage/кофи.png' %}" >
+{% extends 'mainpage/header_footer.html' %}
+{% block content %}
 
 <h1>Список дел на {{kogda}}</h1>
 <ol>
@@ -13,9 +13,5 @@
 </li>
 {% endfor %}
 </ol>
-<a href="{% url 'new_kitten' %}">Форма на котят</a>
-<h1></h1>
-<a href="{% url 'new_task' %}">Форма на задачу</a>
-<h1></h1>
-<a href="{% url 'new_photo' %}">Форма на фотку</a>
 
+{% endblock %}
