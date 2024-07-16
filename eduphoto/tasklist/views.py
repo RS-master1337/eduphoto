@@ -85,13 +85,20 @@ def look_for(request):
         print(request.POST)
    #     print(request.POST['Catname'][0])
         print(request.POST.get('Catname'))
-        context = {
-            'kotenok': Kitten.objects.get(imya=request.POST.get('Catname'))
-        }
+        context = {'kittens': 'KittensNotFound'}
+        kittens_found = Kitten.objects.filter(imya=request.POST.get('Catname'))
+        if kittens_found: #Если котята найдены, список QuerySet [] не будет пустым и не будет ложным, в питоне все пустое - ложное, но не является False!
+            context = {
+                'kittens': list(kittens_found)
+            }
+        else:
+            print('проверка котенка', list(kittens_found))
+        print(len(kittens_found))
+
         return render(
-            request,                  # Запрос
+            request,                         # Запрос
 	        'tasklist/kotenok_render.html',  # путь к шаблону
-            context                   # подстановки
+            context                          # подстановки
         )
 #        if form.is_valid():
 #            print(form.cleaned_data)
@@ -114,4 +121,11 @@ def aboutus(request):
     return render(
         request,                  # Запрос
 	    'tasklist/aboutus.html',# путь к шаблону
+    )
+
+
+def stranichka(request):
+    return render(  
+        request,               # Запрос
+	    'tasklist/empty.html',  # путь к шаблону                  # подстановки
     )

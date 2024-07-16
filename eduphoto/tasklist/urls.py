@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, new_task, new_kitten, new_photo, look_for, aboutus
+from .views import index, new_task, new_kitten, new_photo, look_for, aboutus, stranichka
  
 urlpatterns = [
     path('', index),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('newphoto/', new_photo, name='new_photo'),
     path('lookfor/', look_for, name= 'lookfor'),
     path('aboutus/', aboutus, name='aboutus'),
+    path('json/', stranichka, name ='stranichka')
 ]
